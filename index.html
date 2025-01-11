@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<style>*{
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0;
+}
+.caixa{
+    height: 500px;
+    width: 500px;
+    border: 1px solid white;
+    background-color: black;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}</style>
+<body>
+    <div id="caixa" class="caixa">
+        <p id="paragrafo">Teste</p><br>
+        <button id="button" class="button">BTN</button>
+    </div>
+</body>
+<script>
+    const caixa=document.getElementById("caixa")
+const button=document.getElementById("button")
+let numeros=0
+let set;
+const num=()=>{
+    numeros+=1
+    // const numeroAleatorio=Math.round(Math.random()*10000)
+   caixa.innerHTML=`Número aleatório : ${numeros}`
+   button.innerHTML="BUTÃO"
+
+   if(numeros>=100){
+     clearInterval(set)
+   }
+}
+button.addEventListener("click",(evt)=>{
+ if(!set){
+    set=setInterval(num,1000)
+}
+
+})  
+
+</script>
+</html>
